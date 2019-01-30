@@ -318,6 +318,12 @@ int main(int argc, char* argv[]){
   int oldOrderId;
 
   FILE * file = stdout;
+
+  if(argc<2) {
+      fprintf(stderr, "Usage: %s test_cases/input001.txt\n", argv[0]);
+      return -1;
+  }
+  
   FILE* input_file = fopen(argv[1], "rt");
 
   OrderBook book;
@@ -354,4 +360,5 @@ int main(int argc, char* argv[]){
   }
 
   fclose(file);
+  return 0;
 }
